@@ -1,0 +1,59 @@
+//Estilos para el header con SASS
+.header{
+    background-color: $verde;
+
+    .contenido-header{//Se pone aqui porque esta clase está contenida en la clase header
+        padding: $separacion / 2;//para que sea 2.5rem
+        
+        // //Para separar el titulo con los enlace
+        @include tablet {
+            //Se pasara como @content en el mixin
+            display: flex;
+            justify-content: space-between;
+            align-items: center;//Alinear verticalmente
+        }
+
+    }
+
+    h1{//Porque el h1 está en esta clase tambien, solo se modificara el h1 del header
+        color: $blanco;
+        margin-bottom: 1rem;
+        text-align: center;
+        // @include nuevoMixin;//Usando el mixin creado
+        // @include otroMixin(10rem);//Pasando el valor al mixin
+        @include tablet{//Para que en una tablet se le quite el margen puesto
+            margin-bottom: 0;
+        }
+    }
+
+    
+    &.fijo{
+        position: fixed;//Para poner fijo el header al agregar esta clase
+        width: 100%;//Para que tome todo el ancho
+        box-shadow: 0 .3rem .2rem #444;//Para que tenga una sombra
+                    //ancho  intensidad
+    }
+
+
+
+}
+
+.navegacion-principal{
+
+    //Para el espacio entre los enlaces
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    justify-content: center;//Centrar la navegacion usando flexbox
+
+    a{
+        color: $blanco; 
+        font-size: 2rem;       
+
+        &:hover{//el & hace referencia al 'a' para no tener repetido el mismo selector adentro del anidamiento 
+            color: $amarillo;
+        }
+    }
+
+    
+}

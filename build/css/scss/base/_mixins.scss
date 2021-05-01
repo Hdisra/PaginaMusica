@@ -1,0 +1,30 @@
+//Creacion de un mixins - gurpo de propiedaes que se podran usar
+@mixin nuevoMixin {
+    font-size: 5rem;
+}
+
+@mixin otroMixin($size) {//Con parametros
+    font-size: $size;
+}
+
+@mixin telefono {
+    @media (min-width: $telefono){
+        @content;//Para que al mixin se le pueda pasar cualquier cantidad de codigo entre llaves y ponerlo aqui
+    }
+}
+@mixin tablet {
+    @media(min-width: $tablet){
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+//Para grid
+@mixin grid($fracciones){
+    display: grid;
+    grid-template-columns: repeat($fracciones, 1fr);
+}

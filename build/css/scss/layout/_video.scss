@@ -1,0 +1,48 @@
+.video{
+    position: relative;
+    max-height: 70rem;//Para que se mueva el video junto con el degradado
+    overflow: hidden;//Para que la parte restante del video no se sobresalga de la altura dada
+    
+    .overlay{
+        position: absolute;//Para que el texto se coloque dentro del video y por default se coloca en la esquina superior izquierda
+        width: 100%;
+        height: 100%;
+        // background: linear-gradient(to bottom, $rosa, $amarillo, $morado);//El degradado será de arriba hacia abajo, empezando con el rosa y terminando con el morado
+
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,9e37f2+67,ffffff+100&0.8+0,0.5+100 */
+        background: -moz-linear-gradient(-45deg,  rgba(137,28,30,0.8) 0%, rgba(158,55,242,0.6) 67%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.6) 67%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg,  rgba(137,28,30,0.8) 0%,rgba(158,55,242,0.6) 67%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc891c1e', endColorstr='#80ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    }
+
+
+    video{//Etiqueta video
+        width: 100%;//Para que el video ocupe todo el ancho
+        display: block;
+    }
+
+}
+
+.contenido-video{
+    display: flex;
+    align-items: center;
+    height: 100%;//Para que se centre el texto en el video
+    position: relative;//Para poder seleccionar el texto
+    z-index: 0;
+    h2{
+        //Para que en el span se haga un salto de linea
+        display: flex;
+        flex-direction: column;
+        color: $blanco;
+        font-size: 7rem;
+        align-items: flex-start;//Para que el span se pegue a la izquierda
+        span{
+            background-color: $rosa;
+            font-size: 2rem;
+            padding: 1rem 2rem; 
+            text-align: center;
+        }
+    }
+}

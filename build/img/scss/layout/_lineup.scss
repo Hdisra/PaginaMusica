@@ -1,0 +1,85 @@
+.lineup{
+
+    background-color: $rosa;
+    padding: $separacion;
+
+    h3, p{
+        color: $blanco;
+        text-align: center;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+
+}
+
+.escenarios-contenedor {
+
+
+    //Crecion de las columas
+    @include tablet {
+        @include grid(2);
+        column-gap: $separacion;
+    }
+
+    .escenario{
+        padding-top: $separacion / 2;
+        border-radius: 5%;
+    }
+
+    .nombre-escenario{
+        color: $negro;
+        font-weight: $delgada;
+        font-size: 2rem;
+
+
+        &:after {//.nombre-escenario:after - servira para colocar el icono entre el titulo y los horarios
+            content: '';//Debe de llevar esto para que sea visible el pseudoelemento
+
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;//Para posicionar el icono
+            background-size: 15rem;//Camiar el tamaño de la imagen del icono
+            background-repeat: no-repeat;
+            background-position: center center;//Centrar el icono
+        }
+    }
+
+}
+
+.edm .nombre-escenario {
+    &:after {
+        background-image: url(../../../../build/img/icono_edm.png);//Colocar icono
+    }
+}
+.rock .nombre-escenario{
+    &:after{
+        background-image: url(../../../../build/img/icono_rock.png);
+    }
+}
+
+.calendario{
+    padding: 0;
+    list-style: none;
+
+    li{
+        padding: $separacion / 2;
+        font-weight: $bold;
+
+        span{
+            font-weight: $regular;
+        }
+    }
+}
+
+.bg-verde .calendario li:nth-child(odd){//Para que a cada elemento IMPAR se le aplique los siguientes estilos
+    background-color: darken($verde, 10);//Funcion que hace mas oscuro el verde a una intensidad de 10
+
+}
+
+.bg-amarillo li:nth-child(odd){
+    background-color: darken($amarillo, 10);
+}

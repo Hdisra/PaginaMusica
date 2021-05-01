@@ -1,0 +1,54 @@
+// Para selectores como el html, body, etc
+html{
+    font-size: 62.5%; //Para que 1rem = 10px
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: $fuentePrincipal;
+    font-size: 1.6rem;
+
+    &.fijar-body{//Para las imagenes
+        overflow: hidden;//Para que se quede fijo el body
+    }
+    overflow: scroll;
+}
+
+p{
+    font-size: 2rem;
+    color: $negro;
+}
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 95%; //Si la pantalla es mas grande que 120rem entonces se aplicara este ancho al 95%
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%; //Para que las imagenes sean responsivas
+    border-radius: 5%;
+}
+
+h1,h2,h3{
+    margin: 0;//Quitar el margen superior que tienen por defecto
+}
+h1{
+    font-size: 4rem ;
+
+}
+
+h2{
+    font-size: 3.6rem;
+}
+
+h3{
+    font-size: 3rem;
+}

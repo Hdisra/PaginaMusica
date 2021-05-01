@@ -1,0 +1,66 @@
+.boletos{
+
+    padding: $separacion 0;
+
+    h3{
+        text-align: center;
+        color: $blanco;
+    }
+
+    .contenedor-boletos{
+        @include grid(2);
+        column-gap: $separacion / 2;
+    }
+
+    .plan p {
+        color: $blanco;
+        font-weight: $delgada;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+//Estilos a la tabla
+.pase {
+
+    width: 100%;//Para que se expanda 
+    border-spacing: 0;//Quitamos la separacion que hay entre cada renglon
+    thead{
+        background-color: $rosa;
+        th{//Selecciono la celda para darle estilos
+            color: $blanco;
+            padding: $separacion / 4;
+            text-transform: uppercase;
+            font-weight: $delgada;
+        }
+    
+    }
+
+    tbody{
+        background-color: $blanco;
+        td{
+            padding: $separacion / 5;
+            border-bottom: 1px solid #e1e1e1 ;//Agregando un borde entre cada renglon
+        }
+
+        tr{//Para quitar el ultimo borde que se hace
+            &:last-of-type{
+                td{
+                    border: none;
+                }
+            }
+        }
+    }
+
+    tfoot{
+        background-color: $morado;
+
+        td{
+            color: $blanco;
+            font-weight: $bold;
+            text-align: center;
+            padding: $separacion / 4;
+            font-size: 1.8rem;
+        }
+    }
+}
